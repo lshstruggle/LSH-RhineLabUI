@@ -11,8 +11,15 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    const appId = process.env.YUANQI_APP_ID || "2033060122909652160"
-    const token = process.env.YUANQI_TOKEN || "t1R5g65kkN0L28LnA5jk45Y00hXO0p8L"
+    const appId = process.env.YUANQI_APP_ID
+    const token = process.env.YUANQI_TOKEN
+
+    if (!appId || !token) {
+      return new Response(JSON.stringify({ error: "Chat service is not configured" }), {
+        status: 503,
+        headers: { "Content-Type": "application/json" },
+      })
+    }
 
     const response = await fetch(
       "https://open.hunyuan.tencent.com/openapi/v1/agent/chat/completions",
