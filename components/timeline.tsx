@@ -12,7 +12,7 @@ interface TimelineItem {
 
 const experiences: TimelineItem[] = [
   {
-    title: "AI 产品经理实习生",
+    title: "AI 全栈工程师",
     company: "小成功科技",
     period: "2025/06 - 2025/09",
     description: [

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1600 1120" preserveAspectRatio="xMidYMin meet" style="display:block;max-width:1600px;height:auto;background:#f6f5f0" role="img" aria-labelledby="title desc">
+  <title id="title">LSH 极简标志方向</title>
+  <desc id="desc">三套极简个人标志方向：无限折线、负形字母和光标无限点。</desc>
+  <defs>
+    <filter id="mark-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#071313" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="aqua" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#54c9c0"/>
+      <stop offset="1" stop-color="#2d91ae"/>
+    </linearGradient>
+    <linearGradient id="coral" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f39183"/>
+      <stop offset="1" stop-color="#dc6571"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1120" fill="#f6f5f0"/>
+  <g font-family="Inter, PingFang SC, Microsoft YaHei, sans-serif" fill="#111b1c">
+    <text x="112" y="100" font-size="18" font-weight="700" letter-spacing="5">LIU SONGHAO / LSH</text>
+    <text x="112" y="174" font-size="58" font-weight="800" letter-spacing="-1">极简标志方向</text>
+    <text x="116" y="218" font-size="18" fill="#6d7a77">只保留一个形、一处亮点，以及可被动画化的运动节点。</text>
+    <text x="1488" y="100" text-anchor="end" font-size="15" font-weight="700" letter-spacing="3" fill="#87918d">02 / REDUCED</text>
+    <path d="M112 262H1488" stroke="#cdd2cb" stroke-width="2"/>
+
+    <!-- 01 -->
+    <g transform="translate(112 322)">
+      <text x="0" y="0" font-size="15" font-weight="800" letter-spacing="3" fill="#7b8783">01</text>
+      <text x="0" y="48" font-size="30" font-weight="800">无限折线</text>
+      <text x="0" y="81" font-size="16" fill="#6d7a77">LSH 的首字母被压缩进一条连续路径。</text>
+      <g transform="translate(420 -22)" filter="url(#mark-shadow)">
+        <path d="M40 118C40 57 103 16 163 16C223 16 260 60 303 118C346 176 383 220 443 220C503 220 566 179 566 118C566 57 503 16 443 16C383 16 346 60 303 118C260 176 223 220 163 220C103 220 40 179 40 118Z" fill="none" stroke="#111b1c" stroke-width="22" stroke-linecap="round"/>
+        <path d="M303 118C346 60 383 16 443 16" fill="none" stroke="url(#aqua)" stroke-width="22" stroke-linecap="round"/>
+        <circle cx="303" cy="118" r="14" fill="url(#coral)"/>
+      </g>
+      <text x="1090" y="53" font-size="14" font-weight="700" letter-spacing="2" fill="#8b9692">MOTION</text>
+      <text x="1090" y="82" font-size="16" fill="#4d5b58">亮点沿路径循环</text>
+      <text x="1090" y="108" font-size="16" fill="#4d5b58">→ 首尾相接 = 无限</text>
+    </g>
+
+    <path d="M112 598H1488" stroke="#d7dbd5" stroke-width="2"/>
+
+    <!-- 02 -->
+    <g transform="translate(112 658)">
+      <text x="0" y="0" font-size="15" font-weight="800" letter-spacing="3" fill="#7b8783">02</text>
+      <text x="0" y="48" font-size="30" font-weight="800">负形字母</text>
+      <text x="0" y="81" font-size="16" fill="#6d7a77">用一个方形窗口同时读出 L、S、H。</text>
+      <g transform="translate(448 -28)" filter="url(#mark-shadow)">
+        <rect x="0" y="0" width="252" height="252" rx="52" fill="#111b1c"/>
+        <path d="M62 54V190H102M102 54V190H153M102 122H148" fill="none" stroke="#f6f5f0" stroke-width="16" stroke-linecap="square"/>
+        <path d="M177 54C139 54 132 97 167 108L195 117C228 128 222 174 184 190" fill="none" stroke="url(#aqua)" stroke-width="16" stroke-linecap="round"/>
+        <path d="M184 190H198" stroke="url(#coral)" stroke-width="16" stroke-linecap="round"/>
+      </g>
+      <text x="1090" y="53" font-size="14" font-weight="700" letter-spacing="2" fill="#8b9692">MOTION</text>
+      <text x="1090" y="82" font-size="16" fill="#4d5b58">窗口由小到大展开</text>
+      <text x="1090" y="108" font-size="16" fill="#4d5b58">→ 内部字母逐帧出现</text>
+    </g>
+
+    <path d="M112 934H1488" stroke="#d7dbd5" stroke-width="2"/>
+
+    <!-- 03 -->
+    <g transform="translate(112 992)">
+      <text x="0" y="0" font-size="15" font-weight="800" letter-spacing="3" fill="#7b8783">03</text>
+      <text x="0" y="48" font-size="30" font-weight="800">光标无限点</text>
+      <text x="0" y="81" font-size="16" fill="#6d7a77">最克制的一套：∞ 是系统，亮点是正在发生的可能。</text>
+      <g transform="translate(540 -40)">
+        <path d="M0 65C48 9 102 9 150 65C198 121 252 121 300 65C348 9 402 9 450 65" fill="none" stroke="#111b1c" stroke-width="17" stroke-linecap="round"/>
+        <path d="M0 65C48 121 102 121 150 65C198 9 252 9 300 65C348 121 402 121 450 65" fill="none" stroke="#111b1c" stroke-width="17" stroke-linecap="round"/>
+        <circle cx="450" cy="65" r="16" fill="url(#coral)"/>
+        <rect x="480" y="42" width="6" height="46" rx="3" fill="url(#aqua)"/>
+      </g>
+      <text x="1090" y="53" font-size="14" font-weight="700" letter-spacing="2" fill="#8b9692">MOTION</text>
+      <text x="1090" y="82" font-size="16" fill="#4d5b58">光标闪烁，亮点向前</text>
+      <text x="1090" y="108" font-size="16" fill="#4d5b58">→ 最适合加载状态</text>
+    </g>
+  </g>
+
+  <g transform="translate(112 1080)" font-family="Inter, PingFang SC, Microsoft YaHei, sans-serif">
+    <circle cx="8" cy="0" r="6" fill="#ee7f77"/><text x="24" y="5" font-size="14" fill="#6d7a77">唯一高亮：珊瑚红</text>
+    <circle cx="188" cy="0" r="6" fill="#4ebdb6"/><text x="204" y="5" font-size="14" fill="#6d7a77">辅助高亮：薄荷青</text>
+    <text x="1488" y="5" text-anchor="end" font-size="14" font-weight="700" letter-spacing="2" fill="#7b8783">ONE FORM / ONE SIGNAL / INFINITE BUILD</text>
+  </g>
+</svg>

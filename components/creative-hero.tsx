@@ -13,6 +13,8 @@ export function CreativeHero() {
 
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+    let frameId = 0
+    let isActive = true
 
     let devicePixelRatio: number
 
@@ -34,11 +36,12 @@ export function CreativeHero() {
     let targetX = 0
     let targetY = 0
 
-    window.addEventListener("mousemove", (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect()
       targetX = e.clientX - rect.left
       targetY = e.clientY - rect.top
-    })
+    }
+    window.addEventListener("mousemove", handleMouseMove)
 
     class Particle {
       x: number
@@ -151,7 +154,9 @@ export function CreativeHero() {
         }
       }
 
-      requestAnimationFrame(animate)
+      if (isActive) {
+        frameId = requestAnimationFrame(animate)
+      }
     }
 
     animate()
@@ -159,8 +164,11 @@ export function CreativeHero() {
     window.addEventListener("resize", init)
 
     return () => {
+      isActive = false
+      cancelAnimationFrame(frameId)
       window.removeEventListener("resize", setCanvasDimensions)
       window.removeEventListener("resize", init)
+      window.removeEventListener("mousemove", handleMouseMove)
     }
   }, [])
 

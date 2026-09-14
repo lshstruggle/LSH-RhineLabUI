@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1600 1140" preserveAspectRatio="xMidYMin meet" style="display:block;max-width:1600px;height:auto;background:#f6f5f0" role="img" aria-labelledby="title desc">
+  <title id="title">LSH 非无穷符号标志方向</title>
+  <desc id="desc">四套不使用无穷符号的极简标志方向：终端提示符、模块字母、分叉节点与开放边框。</desc>
+  <defs>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#47b9b1"/>
+      <stop offset="1" stop-color="#3186a4"/>
+    </linearGradient>
+    <linearGradient id="coral" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f18c7e"/>
+      <stop offset="1" stop-color="#d86673"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#101a1b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1140" fill="#f6f5f0"/>
+  <g font-family="Inter, PingFang SC, Microsoft YaHei, sans-serif" fill="#111b1c">
+    <text x="112" y="92" font-size="18" font-weight="700" letter-spacing="5">LIU SONGHAO / LSH</text>
+    <text x="112" y="164" font-size="58" font-weight="800">不使用无穷标志</text>
+    <text x="116" y="208" font-size="18" fill="#6d7a77">用“正在构建、持续生长、保持开放”表达可能性。</text>
+    <text x="1488" y="92" text-anchor="end" font-size="15" font-weight="700" letter-spacing="3" fill="#87918d">03 / OPEN ENDS</text>
+    <path d="M112 252H1488" stroke="#cdd2cb" stroke-width="2"/>
+
+    <!-- A terminal -->
+    <g transform="translate(112 310)">
+      <text x="0" y="0" font-size="15" font-weight="800" letter-spacing="3" fill="#7b8783">01</text>
+      <text x="0" y="48" font-size="30" font-weight="800">终端提示符</text>
+      <text x="0" y="81" font-size="16" fill="#6d7a77">把 LSH 变成一条正在执行的命令，计算机感最明确。</text>
+      <g transform="translate(508 -26)" filter="url(#soft-shadow)">
+        <rect x="0" y="0" width="344" height="190" rx="32" fill="#111b1c"/>
+        <path d="M54 54L98 95L54 136" fill="none" stroke="#f6f5f0" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M126 139H207" stroke="url(#teal)" stroke-width="14" stroke-linecap="round"/>
+        <rect x="227" y="126" width="9" height="26" rx="4.5" fill="url(#coral)"/>
+        <text x="130" y="91" fill="#f6f5f0" font-size="22" font-weight="800" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">LSH</text>
+      </g>
+      <text x="1090" y="42" font-size="14" font-weight="700" letter-spacing="2" fill="#8b9692">MOTION</text>
+      <text x="1090" y="71" font-size="16" fill="#4d5b58">游标闪烁 → 命令执行</text>
+      <text x="1090" y="97" font-size="16" fill="#4d5b58">适合入口加载状态</text>
+    </g>
+
+    <path d="M112 536H1488" stroke="#d7dbd5" stroke-width="2"/>
+
+    <!-- B modular -->
+    <g transform="translate(112 594)">
+      <text x="0" y="0" font-size="15" font-weight="800" letter-spacing="3" fill="#7b8783">02</text>
+      <text x="0" y="48" font-size="30" font-weight="800">模块字母</text>
+      <text x="0" y="81" font-size="16" fill="#6d7a77">用三组可以拆分、重排的模块构成 LSH，稳定而有辨识度。</text>
+      <g transform="translate(512 -30)" filter="url(#soft-shadow)">
+        <rect x="0" y="0" width="300" height="190" rx="30" fill="#111b1c"/>
+        <g fill="#f6f5f0">
+          <rect x="44" y="42" width="17" height="106" rx="8"/><rect x="44" y="131" width="68" height="17" rx="8"/>
+          <rect x="92" y="42" width="17" height="58" rx="8"/><rect x="92" y="87" width="54" height="17" rx="8"/>
+          <rect x="132" y="42" width="17" height="106" rx="8"/>
+        </g>
+        <path d="M192 49H245M218.5 49V142M192 142H245" fill="none" stroke="url(#teal)" stroke-width="17" stroke-linecap="round"/>
+        <circle cx="245" cy="49" r="8" fill="url(#coral)"/>
+      </g>
+      <text x="1090" y="42" font-size="14" font-weight="700" letter-spacing="2" fill="#8b9692">MOTION</text>
+      <text x="1090" y="71" font-size="16" fill="#4d5b58">模块依次落位 → LSH 成形</text>
+      <text x="1090" y="97" font-size="16" fill="#4d5b58">适合做图标系统</text>
+    </g>
+
+    <path d="M112 820H1488" stroke="#d7dbd5" stroke-width="2"/>
+
+    <!-- C branching -->
+    <g transform="translate(112 878)">
+      <text x="0" y="0" font-size="15" font-weight="800" letter-spacing="3" fill="#7b8783">03</text>
+      <text x="0" y="48" font-size="30" font-weight="800">分叉节点</text>
+      <text x="0" y="81" font-size="16" fill="#6d7a77">一个起点，多个方向；表达选择、探索和持续生长。</text>
+      <g transform="translate(500 -40)">
+        <path d="M24 136H168L255 54M168 136L255 136M168 136L255 218" fill="none" stroke="#111b1c" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24" cy="136" r="16" fill="url(#coral)"/>
+        <circle cx="255" cy="54" r="13" fill="#111b1c"/><circle cx="255" cy="136" r="13" fill="url(#teal)"/><circle cx="255" cy="218" r="13" fill="#111b1c"/>
+        <path d="M24 136H80" stroke="url(#coral)" stroke-width="18" stroke-linecap="round"/>
+      </g>
+      <text x="1090" y="42" font-size="14" font-weight="700" letter-spacing="2" fill="#8b9692">MOTION</text>
+      <text x="1090" y="71" font-size="16" fill="#4d5b58">亮点从起点分流</text>
+      <text x="1090" y="97" font-size="16" fill="#4d5b58">适合表达探索感</text>
+    </g>
+
+    <!-- D open frame -->
+    <g transform="translate(112 1110)">
+      <text x="0" y="0" font-size="15" font-weight="800" letter-spacing="3" fill="#7b8783">04</text>
+      <text x="0" y="48" font-size="30" font-weight="800">开放边框</text>
+      <text x="0" y="81" font-size="16" fill="#6d7a77">不封闭的框，保留一个出口；极简、安静、适合个人站点。</text>
+      <g transform="translate(532 -66)">
+        <path d="M30 110V36H104M244 36H318V110M318 186V260H244M104 260H30V186" fill="none" stroke="#111b1c" stroke-width="18" stroke-linecap="square"/>
+        <path d="M131 153L170 114L209 153L170 192Z" fill="none" stroke="url(#teal)" stroke-width="12" stroke-linejoin="round"/>
+        <circle cx="170" cy="114" r="9" fill="url(#coral)"/>
+      </g>
+      <text x="1090" y="42" font-size="14" font-weight="700" letter-spacing="2" fill="#8b9692">MOTION</text>
+      <text x="1090" y="71" font-size="16" fill="#4d5b58">四角展开 → 中心亮起</text>
+      <text x="1090" y="97" font-size="16" fill="#4d5b58">适合做页面进入动画</text>
+    </g>
+  </g>
+
+  <g transform="translate(112 1120)" font-family="Inter, PingFang SC, Microsoft YaHei, sans-serif">
+    <circle cx="8" cy="0" r="6" fill="#ef8177"/><text x="24" y="5" font-size="14" fill="#6d7a77">珊瑚红 = 当前动作</text>
+    <circle cx="194" cy="0" r="6" fill="#4ebdb6"/><text x="210" y="5" font-size="14" fill="#6d7a77">薄荷青 = 下一步</text>
+    <text x="1488" y="5" text-anchor="end" font-size="14" font-weight="700" letter-spacing="2" fill="#7b8783">BUILD / BRANCH / OPEN</text>
+  </g>
+</svg>

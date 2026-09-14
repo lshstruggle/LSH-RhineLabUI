@@ -1,20 +1,19 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Github, Mail, ExternalLink, Award, GraduationCap, Briefcase, Wrench, MessageCircle } from "lucide-react"
-import { asset } from "@/lib/asset"
+import { Github, Mail, ExternalLink, Award, GraduationCap, Briefcase, Wrench, MessageCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { ProjectCard } from "@/components/project-card"
 import { SkillBadge } from "@/components/skill-badge"
 import { Timeline } from "@/components/timeline"
 import { ContactForm } from "@/components/contact-form"
-import { CreativeHero } from "@/components/creative-hero"
 import { FloatingNav } from "@/components/floating-nav"
 import { MouseFollower } from "@/components/mouse-follower"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
+import { ParallaxHero } from "@/components/parallax-hero"
+import { ArchiveProjectStage } from "@/components/archive-project-stage"
 
 export default function Portfolio() {
   return (
@@ -23,8 +22,9 @@ export default function Portfolio() {
       <ScrollProgress />
       <FloatingNav />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <ParallaxHero />
+      {/* Legacy hero replaced by the parallax stage above. */}
+      {/* <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-sky rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
           <div className="absolute top-40 right-10 w-72 h-72 bg-rose rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
@@ -35,7 +35,7 @@ export default function Portfolio() {
           <div className="space-y-6">
             <div className="inline-block">
               <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-ink/5 backdrop-blur-sm border border-ink/10 mb-4 mt-4">
-                <span className="relative z-10">AI 产品经理</span>
+                  <span className="relative z-10">AI 全栈工程师</span>
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-sky/20 to-rose/20 animate-pulse"></span>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function Portfolio() {
             <div className="w-1.5 h-1.5 rounded-full bg-ink/60 animate-pulse"></div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Education Section */}
       <section id="education" className="py-32 relative">
@@ -187,41 +187,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-32 relative">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-rose rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-sky rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        </div>
-
-        <div className="container relative z-10">
-          <SectionHeading title="项目经历" subtitle="我的代表性作品" />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            <ProjectCard
-              title="《峡谷寻城记》— 沉浸式电竞文旅伴游系统"
-              description="针对腾讯全球开悟大赛设计的 AI 应用，将电竞 IP、文旅探索与 AI 技术深度结合。首创「电竞 IP + AI Agent + LBS 游戏化」模式，设计 6 位英雄 AI 智能体的性格、剧情及互动逻辑。"
-              tags={["AI Agent", "LBS", "多模态AI", "TTS", "MVP设计"]}
-              image={asset("/project-canyon.png")}
-              demoUrl="/projects/canyon"
-            />
-            <ProjectCard
-              title="大型交通枢纽通行车辆智能检测系统"
-              description="从 0 到 1 打造结合 AI 视觉与高并发流处理的智能调度中枢，实现园区车辆监控、拥堵预测与安全预警。模型准确率达 90%，将核心调度人力成本大幅压缩至 1-2 人。"
-              tags={["AI视觉", "高并发", "WebSocket", "全栈开发", "Go/gRPC"]}
-              image={asset("/project-its.png")}
-              repoUrl="https://github.com/lshstruggle/Intelligent-Transportation-System"
-            />
-            <ProjectCard
-              title="《金铲铲之战》系统拆解与竞品分析报告"
-              description="对英雄联盟IP下自走棋品类进行深度系统拆解，从经济系统、概率系统、战斗逻辑到变量机制逐层剖析，并与《王者万象棋》《炉石传说：酒馆战棋》进行多维度竞品对比。"
-              tags={["产品拆解", "竞品分析", "游戏策划", "系统分析"]}
-              image={asset("/project-tft.jpg")}
-              demoUrl="/projects/tft-analysis"
-            />
-          </div>
-        </div>
-      </section>
+      <ArchiveProjectStage />
 
       {/* Skills Section */}
       <section id="skills" className="py-32 relative">
@@ -345,7 +311,7 @@ export default function Portfolio() {
                 <h4 className="text-lg font-medium mb-4 text-ink">当前状态</h4>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  <span className="text-ink/70">积极寻找产品经理实习与全职机会</span>
+                  <span className="text-ink/70">积极寻找 AI 全栈工程师机会</span>
                 </div>
               </div>
             </GlassmorphicCard>
