@@ -12,15 +12,25 @@ interface TimelineItem {
 
 const experiences: TimelineItem[] = [
   {
-    title: "AI 全栈工程师",
-    company: "小成功科技",
+    title: "AI 全栈开发实习生",
+    company: "小成功科技有限公司",
     period: "2025/06 - 2025/09",
     description: [
-      "主导基于钉钉、飞书、企微多维表生态的 ToB 端 AI 应用全栈开发，针对立白集团、周大福、地方健康社区等领先企业和社区，设计并交付 AI 驱动的自动化解决方案。",
-      "提出并实现「多表联动检索 + 云函数自动化任务编排」方案，将管理端操作由多步繁琐流程缩短至「一键点击实现海量任务分发」，执行效率提升 300%。",
-      "基于 LangChain + LangGraph 构建智能 Agent，采用 Plan-and-Execute 模式，将复杂工作流的交付成功率提升了 40%。",
-      "设计「全自动日报生成」工作流，实现从信息收集到决策汇报的全链路自动化。",
-      "设计并重构支持动态配置参数的多租户接口，实现「一套接口驱动无限公司业务」的扩展性。",
+      "独立交付越秀健康社区助手、海达销售助手、粤秀种草助手等 SaaS 产品，覆盖 React 前端、JavaScript BFF、后端联调与部署上线。",
+      "设计 React → JavaScript BFF → 企业平台 API 三层架构，统一托管企业凭证，实现租户级 AppID 与密钥动态路由，并封装多维表 CRUD、分页、限流与重试能力。",
+      "将批量推广派发抽象为可编排 Agent 工作流，串联参数解析、特征筛选、批量打标、接口调用和状态回写，内置定时巡检、超时终止与异常校验。",
+      "基于 LangChain、Plan-and-Execute、企业私有知识库与 RAG 搭建领域智能体和通用 MCP 工具集，覆盖 80% 常规业务场景，减少 60% 重复接口开发；健康社区助手服务约 2000 名医生。",
+    ],
+  },
+  {
+    title: "Tool Execution Safety Guard 开源贡献者",
+    company: "tRPC-Agent-Go / 腾讯犀牛鸟开源人才培养计划",
+    period: "2026/07",
+    description: [
+      "面向 AI Agent Tool Use 的命令注入、敏感信息泄露和网络外连风险，参与构建工具安全扫描、权限拦截与全链路监控体系。",
+      "实现策略驱动的 tool/safety 检查器，扫描命令、脚本、参数、工作目录、环境变量和工具元数据，输出 allow / deny / ask 决策与结构化 ScanReport。",
+      "扩展 Shell 绕过防护，覆盖 eval、命令替换、变量展开、管道、重定向及 Git、awk、sed、find 等二级执行器；对无法安全解析的输入采用 fail-closed 策略。",
+      "通过定向测试、竞态检测、Fuzz、Benchmark、go vet 和 Linux 交叉编译验证，500 条混合命令扫描耗时约 10ms，高危语料检出率 100%。",
     ],
   },
 ]

@@ -53,7 +53,7 @@ export function ParallaxHero() {
                 <span className="mt-2 block text-rose">刘松昊</span>
               </h1>
               <p className="mt-8 max-w-xl text-base leading-8 text-ink/65 md:text-lg">
-                AI 全栈工程师，专注于 Agent 工程化落地与 ToB 自动化解决方案。把复杂问题整理成可理解、可交付、可持续迭代的产品系统。
+                AI 全栈工程师，专注于 Agent 执行引擎、RAG 知识库、可视化工作流与 ToB 自动化解决方案。把复杂问题整理成可理解、可交付、可持续迭代的产品系统。
               </p>
 
               <div className="mt-9 flex flex-wrap items-center gap-3">

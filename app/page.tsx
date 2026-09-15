@@ -132,7 +132,7 @@ export default function Portfolio() {
                     <div>
                       <h3 className="text-2xl font-bold text-ink">南华大学</h3>
                       <div className="text-lg text-ink/70">
-                        人工智能专业 <span className="text-rose font-medium">（GPA 前 20%）</span>
+                        人工智能专业 <span className="text-rose font-medium">（GPA 3.3 / 5.0）</span>
                       </div>
                     </div>
                   </div>
@@ -141,7 +141,14 @@ export default function Portfolio() {
 
                 <div className="border-t border-ink/10 pt-6">
                   <h4 className="text-sm font-semibold text-ink/50 uppercase tracking-wider mb-4">获奖经历</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-sky/5 border border-sky/10">
+                      <Award className="w-5 h-5 text-rose shrink-0 mt-0.5" />
+                      <div>
+                        <div className="text-sm font-medium text-ink">腾讯开悟 AI 应用创新与实践赛</div>
+                        <div className="text-xs text-ink/50">全国二等奖</div>
+                      </div>
+                    </div>
                     <div className="flex items-start gap-3 p-4 rounded-lg bg-sky/5 border border-sky/10">
                       <Award className="w-5 h-5 text-rose shrink-0 mt-0.5" />
                       <div>
@@ -197,15 +204,15 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="专业技能" subtitle="我的能力矩阵" />
+          <SectionHeading title="专业技能与个人优势" subtitle="我的能力矩阵" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-            <SkillBadge name="产品策划与设计" level={95} />
-            <SkillBadge name="AI Agent 工程化落地" level={90} />
-            <SkillBadge name="ToB 自动化解决方案" level={90} />
-            <SkillBadge name="技术产品化与架构视野" level={85} />
-            <SkillBadge name="AI-Native 全生命周期研发" level={88} />
-            <SkillBadge name="AI 辅助研发与原型构建" level={92} />
+            <SkillBadge name="AI Agent 与应用工程" level={95} />
+            <SkillBadge name="全栈开发技术" level={93} />
+            <SkillBadge name="RAG / 知识库工程" level={91} />
+            <SkillBadge name="数据与基础设施" level={88} />
+            <SkillBadge name="安全工程与可观测性" level={86} />
+            <SkillBadge name="AI Coding 与交付" level={92} />
           </div>
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -213,10 +220,10 @@ export default function Portfolio() {
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <Wrench className="w-5 h-5 text-sky" />
-                  <h3 className="text-lg font-bold text-ink">产品能力</h3>
+                  <h3 className="text-lg font-bold text-ink">AI Agent 与应用工程</h3>
                 </div>
                 <p className="text-ink/70 text-sm leading-relaxed">
-                  具备敏锐的用户同理心与业务嗅觉，熟练掌握竞品分析、需求洞察及 MVP 敏捷交付策略；熟练使用 Figma 进行高保真交互原型设计，能独立撰写强商业逻辑与高落地性的产品需求文档（PRD）。
+                  掌握 Agent Loop、LangGraph、Tool Calling、Tool Registry、分层记忆与 RAG 检索增强；熟悉 Plan-and-Execute、Prompt 工程、MCP 工具封装、Embedding 链路和企业级知识库落地，也具备 TTS 模型训练部署经验。
                 </p>
               </div>
             </GlassmorphicCard>
@@ -225,10 +232,10 @@ export default function Portfolio() {
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <MessageCircle className="w-5 h-5 text-rose" />
-                  <h3 className="text-lg font-bold text-ink">AI 工程化</h3>
+                  <h3 className="text-lg font-bold text-ink">全栈开发技术</h3>
                 </div>
                 <p className="text-ink/70 text-sm leading-relaxed">
-                  熟练运用 LangChain / LangGraph 框架及 Plan-and-Execute 模式编排复杂工作流；熟练 Prompt Engineering 与多模态 AI（TTS/视觉引擎）的场景调优，熟悉腾讯元器等主流大模型工具的商业化应用。
+                  后端掌握 Python（FastAPI、SQLAlchemy、Django）、Go（Gin、GORM）与 JavaScript / TypeScript；前端掌握 React、Vite、React Flow，具备 REST API、SSE、BFF、异步任务调度和管理后台的全链路交付能力。
                 </p>
               </div>
             </GlassmorphicCard>
@@ -237,10 +244,10 @@ export default function Portfolio() {
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <Briefcase className="w-5 h-5 text-sky" />
-                  <h3 className="text-lg font-bold text-ink">ToB/SaaS</h3>
+                  <h3 className="text-lg font-bold text-ink">数据与基础设施</h3>
                 </div>
                 <p className="text-ink/70 text-sm leading-relaxed">
-                  深入理解 ToB/SaaS 商业逻辑，精通基于钉钉、飞书、企微多维表的生态开发；擅长通过「多表联动检索 + 云函数自动化」等手段重构业务工作流，为企业客户交付高 ROI 的 AI 自动化解决方案。
+                  熟悉 PostgreSQL、pgvector、Alembic、MySQL、MongoDB GeoJSON 与 Redis，掌握事务、行级锁、向量检索、任务队列、限流、TTL 和 Docker Compose 服务编排，能够完成数据建模到部署上线。
                 </p>
               </div>
             </GlassmorphicCard>
@@ -249,10 +256,10 @@ export default function Portfolio() {
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <Github className="w-5 h-5 text-rose" />
-                  <h3 className="text-lg font-bold text-ink">技术架构</h3>
+                  <h3 className="text-lg font-bold text-ink">工程化与 AI Coding</h3>
                 </div>
                 <p className="text-ink/70 text-sm leading-relaxed">
-                  具备全栈开发经验与扎实的底层计算机基础；深入理解微服务架构（Go / gRPC）与高并发中间件（Kafka / Redis / WebSocket）的应用场景；能跨越技术边界与研发团队无缝对话。
+                  熟练使用 Codex、Claude Code、GitHub Copilot 辅助需求拆解、架构设计、调试与测试；熟悉 HTTP、Git、Linux、指数退避、状态机、单元 / 集成 / 边界测试、Fuzz Test 与 OpenTelemetry，重视 AI 输出审查和交付质量。
                 </p>
               </div>
             </GlassmorphicCard>

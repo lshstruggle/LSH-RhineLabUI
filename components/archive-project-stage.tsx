@@ -3,7 +3,8 @@
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { motion, useMotionValueEvent, useScroll, useSpring, useTransform } from "framer-motion"
-import { useRef, useState } from "react"
+import { useRef, useState, type KeyboardEvent } from "react"
+import { useRouter } from "next/navigation"
 
 import { asset } from "@/lib/asset"
 
@@ -26,14 +27,28 @@ const projects: Project[] = [
 ] 
 
 function ArchiveCard({ project, index, progress, activeIndex }: { project: Project; index: number; progress: ReturnType<typeof useSpring>; activeIndex: number }) {
+  const router = useRouter()
   const x = useTransform(progress, (value) => String((index - value * (projects.length - 1)) * 31) + "vw")
   const y = useTransform(progress, (value) => String(Math.abs(index - value * (projects.length - 1)) * 5.5) + "vh")
   const scale = useTransform(progress, (value) => Math.max(0.72, 1 - Math.abs(index - value * (projects.length - 1)) * 0.13))
   const opacity = useTransform(progress, (value) => Math.max(0.22, 1 - Math.abs(index - value * (projects.length - 1)) * 0.38))
   const rotate = useTransform(progress, (value) => (index - value * (projects.length - 1)) * -7)
 
+  const destination = project.href ?? project.external
+  const openProject = () => {
+    if (!destination) return
+    if (project.href) router.push(project.href)
+    else window.open(destination, "_blank", "noopener,noreferrer")
+  }
+  const onCardKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault()
+      openProject()
+    }
+  }
+
   return (
-    <motion.article className="archive-card absolute left-1/2 top-1/2 w-[min(78vw,560px)] -translate-x-1/2 -translate-y-1/2" style={{ x, y, scale, opacity, rotate, zIndex: index === activeIndex ? 20 : 10 - index }} aria-label={project.id + " " + project.title}>
+    <motion.article className="archive-card absolute left-1/2 top-1/2 w-[min(78vw,560px)] -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose focus-visible:ring-offset-4" style={{ x, y, scale, opacity, rotate, zIndex: index === activeIndex ? 20 : 10 - index }} aria-label={project.id + " " + project.title} role="link" tabIndex={0} onClick={openProject} onKeyDown={onCardKeyDown}>
       <div className="relative overflow-hidden border border-ink/20 bg-[#eae5e1]/90 shadow-[0_22px_70px_rgba(8,10,8,0.14)]">
         <div className="absolute left-0 top-0 z-10 h-1 w-full bg-rose" />
         <div className="relative aspect-[1.55] overflow-hidden border-b border-ink/15">
@@ -50,7 +65,7 @@ function ArchiveCard({ project, index, progress, activeIndex }: { project: Proje
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">{project.tags.map((tag) => <span key={tag} className="font-mono text-[10px] text-rose"># {tag}</span>)}</div>
           </div>
           <div className="flex items-end md:justify-end">
-            {project.href ? <Link href={project.href} className="inline-flex items-center border-b border-ink pb-1 text-xs font-semibold tracking-[0.12em] text-ink transition-colors hover:border-rose hover:text-rose">ACCESS FILE <ArrowUpRight className="ml-2 h-3.5 w-3.5" /></Link> : <Link href={project.external ?? "#"} target="_blank" rel="noopener noreferrer" className="inline-flex items-center border-b border-ink pb-1 text-xs font-semibold tracking-[0.12em] text-ink transition-colors hover:border-rose hover:text-rose">VIEW SOURCE <ArrowUpRight className="ml-2 h-3.5 w-3.5" /></Link>}
+            {project.href ? <Link href={project.href} onClick={(event) => event.stopPropagation()} className="inline-flex items-center border-b border-ink pb-1 text-xs font-semibold tracking-[0.12em] text-ink transition-colors hover:border-rose hover:text-rose">ACCESS FILE <ArrowUpRight className="ml-2 h-3.5 w-3.5" /></Link> : <Link href={project.external ?? "#"} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()} className="inline-flex items-center border-b border-ink pb-1 text-xs font-semibold tracking-[0.12em] text-ink transition-colors hover:border-rose hover:text-rose">VIEW SOURCE <ArrowUpRight className="ml-2 h-3.5 w-3.5" /></Link>}
           </div>
         </div>
       </div>
