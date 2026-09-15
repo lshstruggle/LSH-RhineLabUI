@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+  <title id="title">LSH 环绕字母标志动画</title>
+  <desc id="desc">C 方案动画预览：环线逐步绘制，一条光迹沿数字 8 的无穷轨迹环绕运行，中央 S 笔画随后出现，信号节点呼吸，LSH 字标最后淡入。</desc>
+  <defs>
+    <linearGradient id="coral" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f29384"/>
+      <stop offset="1" stop-color="#d96b73"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#58c8c0"/>
+      <stop offset="1" stop-color="#2e86a8"/>
+    </linearGradient>
+    <radialGradient id="nodeGlow">
+      <stop offset="0" stop-color="#58c8c0" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#58c8c0" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .ink { stroke: #111b1c; }
+      .wordmark { fill: #111b1c; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 800; letter-spacing: 10px; }
+      .caption { fill: #7c8985; font-family: Inter, PingFang SC, Microsoft YaHei, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 4px; }
+      .draw { fill: none; stroke-dasharray: 1; stroke-dashoffset: 1; }
+      .trace { fill: none; stroke: url(#signal); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: .075 .925; stroke-dashoffset: 1; opacity: .92; }
+      @media (prefers-reduced-motion: reduce) {
+        .draw { stroke-dashoffset: 0; }
+        .trace { stroke-dashoffset: 0; opacity: .92; }
+        .reveal { opacity: 1 !important; }
+        .pulse, .halo, .orbit { animation: none !important; }
+        .orbit { display: none; }
+      }
+    </style>
+  </defs>
+
+  <rect width="960" height="620" fill="#f4f3ee"/>
+
+  <g transform="translate(0 16)">
+    <text x="480" y="54" text-anchor="middle" class="caption">LIU SONGHAO / LSH</text>
+
+    <!-- The reference silhouette is drawn first. -->
+    <path id="ring" class="ink draw" pathLength="1"
+      d="M126 278C126 166 256 103 354 167L480 257L606 167C704 103 834 166 834 278C834 390 704 453 606 389L480 299L354 389C256 453 126 390 126 278Z"
+      stroke-width="58" stroke-linecap="round" stroke-linejoin="round">
+      <animate id="ringDraw" attributeName="stroke-dashoffset" from="1" to="0" dur="1.6s" begin="0s" fill="freeze" calcMode="spline" keySplines=".42 0 .58 1"/>
+    </path>
+
+    <!-- A moving dash follows the same closed path, making the loop read as a continuous figure-eight orbit. -->
+    <path class="trace" pathLength="1"
+      d="M126 278C126 166 256 103 354 167L480 257L606 167C704 103 834 166 834 278C834 390 704 453 606 389L480 299L354 389C256 453 126 390 126 278Z">
+      <animate attributeName="stroke-dashoffset" from="1" to="0" dur="2.8s" begin="ringDraw.end" repeatCount="indefinite" calcMode="linear"/>
+    </path>
+    <circle class="orbit" r="9" fill="url(#coral)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur=".25s" begin="ringDraw.end" fill="freeze"/>
+      <animateMotion dur="2.8s" begin="ringDraw.end" repeatCount="indefinite" rotate="auto">
+        <mpath href="#ring"/>
+      </animateMotion>
+    </circle>
+
+    <!-- L and H are revealed as structural letterforms after the loop closes. -->
+    <g class="reveal" opacity="0">
+      <path class="ink" d="M234 209V344H317" fill="none" stroke-width="34" stroke-linecap="square"/>
+      <path class="ink" d="M673 209V344M756 209V344M673 276H756" fill="none" stroke-width="30" stroke-linecap="square"/>
+      <animate attributeName="opacity" from="0" to="1" dur=".45s" begin="ringDraw.end" fill="freeze"/>
+    </g>
+
+    <!-- S is the accent stroke and the main motion cue. -->
+    <path id="sStroke" class="draw" pathLength="1" d="M480 208C436 160 377 174 373 221C369 264 424 270 473 286C521 302 526 359 480 378C436 396 397 372 376 343"
+      fill="none" stroke="url(#coral)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+      <animate id="sDraw" attributeName="stroke-dashoffset" from="1" to="0" dur=".8s" begin="ringDraw.end + .28s" fill="freeze" calcMode="spline" keySplines=".42 0 .58 1"/>
+    </path>
+
+    <!-- A quiet signal pulse gives the mark a loading-ready focal point. -->
+    <circle class="halo" cx="480" cy="278" r="38" fill="url(#nodeGlow)" opacity="0">
+      <animate attributeName="opacity" values="0;.7;0" dur="1.8s" begin="sDraw.end" repeatCount="indefinite"/>
+      <animate attributeName="r" values="18;42;18" dur="1.8s" begin="sDraw.end" repeatCount="indefinite"/>
+    </circle>
+    <circle class="pulse" cx="480" cy="278" r="13" fill="url(#signal)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur=".25s" begin="sDraw.end" fill="freeze"/>
+      <animate attributeName="r" values="13;16;13" dur="1.8s" begin="sDraw.end" repeatCount="indefinite"/>
+    </circle>
+
+    <g class="reveal" opacity="0">
+      <text x="480" y="494" text-anchor="middle" class="wordmark" font-size="34">LSH</text>
+      <text x="480" y="526" text-anchor="middle" class="caption">LIU SONGHAO</text>
+      <animate attributeName="opacity" from="0" to="1" dur=".5s" begin="sDraw.end + .32s" fill="freeze"/>
+    </g>
+  </g>
+</svg>

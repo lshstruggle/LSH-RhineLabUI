@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1180" width="100%" height="auto" preserveAspectRatio="xMidYMin meet" style="display:block;max-width:1600px;height:auto;background:#f4f3ee" role="img" aria-labelledby="title desc">
+  <title id="title">LSH 环绕字母标志方案</title>
+  <desc id="desc">以参考图横向粗环为骨架，将 L、S、H 融入环绕结构的 A 类纯图形与 C 类组合标志方案。</desc>
+  <defs>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#58c8c0"/>
+      <stop offset="1" stop-color="#2e86a8"/>
+    </linearGradient>
+    <linearGradient id="coral" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f29384"/>
+      <stop offset="1" stop-color="#d96b73"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#111b1c" flood-opacity="0.13"/>
+    </filter>
+    <style>
+      .ink { fill: #111b1c; }
+      .paper { fill: #f4f3ee; }
+      .muted { fill: #6b7975; }
+      .meta { fill: #7c8985; font-size: 14px; font-weight: 800; letter-spacing: 3px; }
+      .body { fill: #53625e; font-size: 15px; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+
+    <!-- Shared mark definition; rendered only where explicitly referenced below. -->
+    <g id="master-mark">
+      <!-- loop skeleton -->
+      <path d="M174 397C174 285 304 222 402 286L558 397L714 286C812 222 942 285 942 397C942 509 812 572 714 508L558 397L402 508C304 572 174 509 174 397Z" fill="none" stroke="#111b1c" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- L in the left loop -->
+      <path d="M282 328V463H365" fill="none" stroke="#111b1c" stroke-width="34" stroke-linecap="square"/>
+      <!-- H in the right loop -->
+      <path d="M751 328V463M833 328V463M751 395H833" fill="none" stroke="#111b1c" stroke-width="30" stroke-linecap="square"/>
+      <!-- S as the crossing ribbon -->
+      <path d="M558 327C514 279 455 293 451 340C447 383 502 389 551 405C599 421 604 478 558 497C514 515 475 491 454 462" fill="none" stroke="url(#coral)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="558" cy="397" r="13" fill="url(#signal)"/>
+    </g>
+  </defs>
+
+  <rect width="1600" height="1180" fill="#f4f3ee"/>
+  <g font-family="Inter, PingFang SC, Microsoft YaHei, sans-serif">
+    <text x="112" y="86" class="meta">LIU SONGHAO / LSH</text>
+    <text x="112" y="158" class="ink" font-size="56" font-weight="800">环绕字母标志</text>
+    <text x="116" y="202" class="body">以参考图的横向粗环为骨架，把 L、S、H 变成结构的一部分。</text>
+    <text x="1488" y="86" text-anchor="end" class="meta">05 / LOOPED LETTERMARK</text>
+    <path d="M112 242H1488" stroke="#cdd2cb" stroke-width="2"/>
+
+    <!-- C hero -->
+    <g transform="translate(112 300)">
+      <text x="0" y="0" class="meta">C / COMBINATION MARK</text>
+      <text x="0" y="38" class="ink" font-size="30" font-weight="800">主方案：LSH 被环绕</text>
+      <text x="0" y="70" class="body">保留参考图的强对称与粗黑轮廓；字母不是附加文字，而是环内结构。</text>
+      <g transform="translate(70 112) scale(1.18)" filter="url(#shadow)"><use href="#master-mark"/></g>
+      <g transform="translate(1070 170)">
+        <text x="0" y="0" class="meta">READING ORDER</text>
+        <text x="0" y="34" class="body">1. 先看到横向环形骨架</text>
+        <text x="0" y="63" class="body">2. 左右读出 L / H</text>
+        <text x="0" y="92" class="body">3. 中心读出 S 与信号节点</text>
+        <path d="M0 132H250" stroke="#cdd2cb"/>
+        <text x="0" y="170" class="meta">WORDMARK</text>
+        <text x="0" y="209" class="ink mono" font-size="30" font-weight="800" letter-spacing="5">LSH</text>
+        <text x="0" y="240" class="body">LIU SONGHAO</text>
+      </g>
+    </g>
+
+    <path d="M112 742H1488" stroke="#cdd2cb" stroke-width="2"/>
+
+    <!-- A icon only -->
+    <g transform="translate(112 800)">
+      <text x="0" y="0" class="meta">A / SYMBOL ONLY</text>
+      <text x="0" y="38" class="ink" font-size="30" font-weight="800">纯图形：去掉字标仍可识别</text>
+      <text x="0" y="70" class="body">适合 favicon、头像、加载器；缩小后保留 L / S / H 的三段阅读。</text>
+      <g transform="translate(110 112) scale(.7)" filter="url(#shadow)">
+        <rect x="0" y="0" width="820" height="600" rx="42" class="ink"/>
+        <g transform="translate(88 100)">
+          <path d="M0 200C0 88 130 25 228 89L384 200L540 89C638 25 768 88 768 200C768 312 638 375 540 311L384 200L228 311C130 375 0 312 0 200Z" fill="none" stroke="#f4f3ee" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M108 130V270H191" fill="none" stroke="#f4f3ee" stroke-width="32" stroke-linecap="square"/>
+          <path d="M577 130V270M660 130V270M577 200H660" fill="none" stroke="#f4f3ee" stroke-width="29" stroke-linecap="square"/>
+          <path d="M384 130C340 82 281 96 277 143C273 186 328 192 377 208C425 224 430 281 384 300C340 318 301 294 280 265" fill="none" stroke="url(#coral)" stroke-width="27" stroke-linecap="round"/>
+          <circle cx="384" cy="200" r="12" fill="url(#signal)"/>
+        </g>
+      </g>
+      <g transform="translate(850 154)">
+        <text x="0" y="0" class="meta">MOTION READY</text>
+        <text x="0" y="32" class="body">环线描边 → S 笔画 → 中心节点</text>
+        <text x="0" y="62" class="body">SMIL / stroke-dashoffset</text>
+        <path d="M0 96H360" stroke="#cdd2cb"/>
+        <text x="0" y="133" class="meta">MONOCHROME</text>
+        <text x="0" y="163" class="body">将珊瑚与薄荷青改为同一黑色即可印刷。</text>
+      </g>
+    </g>
+
+    <path d="M112 1088H1488" stroke="#cdd2cb" stroke-width="2"/>
+    <text x="112" y="1130" class="body">推荐主色：#111B1C　信号青：#58C8C0　动作珊瑚：#F29384</text>
+    <text x="1488" y="1130" text-anchor="end" class="meta">LOOP / L / S / H</text>
+  </g>
+</svg>
