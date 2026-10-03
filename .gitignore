@@ -1,33 +1,35 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+node_modules/
+backups/
+dist/
+.tools/
+*.mp4
+*.blend1
+optix7cache.db
+reference/*.jpg
+reference/**/*.jpg
+art/.cache/
+.worktrees/
+release/
+video/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
 
-# dependencies
-/node_modules
+reference/local-files-connection.js
 
-# next.js
-/.next/
-/out/
+# Local integration checkout
+.main-integration/
 
-# production
-/build
+# Individually licensed MyFonts kit; install locally, never publish to Git.
+public/fonts/novecento/
+.vercel/
+.wrangler/
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# build output
-/dist/
-
-# macOS metadata
+# Local Codex workspace metadata
+.agents/
+.workbuddy/
+outputs/
+skills-lock.json
 .DS_Store
