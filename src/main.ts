@@ -76,7 +76,7 @@ $("#stage").innerHTML = `
     <div class="boot-logo">${logo}</div>
     <div class="auth-status"><span>▪</span> <span id="auth-message"></span><i></i></div>
     <div class="scan"><svg viewBox="0 0 1920 1080" aria-hidden="true"><g fill="none" stroke="#080a08" stroke-width="2" stroke-linecap="round"><path/><path stroke="#fff"/><path/><path/><path/><path/><circle class="orbit-dot" r="8" fill="#ed821b" stroke="none"/><circle class="orbit-dot" r="8" fill="#ed821b" stroke="none"/><circle class="scan-core" cx="960" cy="540" r="5" fill="#080a08" stroke="none"/></g></svg><span>权限验证通过</span></div>
-    <div class="welcome"><div class="welcome-panel"></div><div class="welcome-heading">欢迎访问</div><div class="welcome-company"><strong>莱茵生命</strong><strong class="welcome-highlight" aria-hidden="true">莱茵生命</strong></div><div class="welcome-database">内部资料档案</div><div class="welcome-logo">${logo}</div></div>
+    <div class="welcome"><div class="welcome-panel"></div><div class="welcome-heading">欢迎来到</div><div class="welcome-company"><strong>LSH</strong><strong class="welcome-highlight" aria-hidden="true">LSH</strong></div><div class="welcome-database">AI 全栈作品集</div><div class="welcome-logo">${logo}</div></div>
   </section>
   <svg id="inspection-marks" viewBox="0 0 1920 1080" aria-hidden="true"><path id="inspection-lines"/><g id="inspection-corners"></g><circle id="inspection-point" r="1.8"/></svg>
   <div id="inspection-text" aria-hidden="true">保密级别：<strong>一般业务使用</strong></div>
@@ -93,7 +93,7 @@ $("#stage").innerHTML = `
     <div class="object-caption"><span id="object-id">编号 001</span><div>内部资料档案</div><small>拖动查看 <span>↔</span></small><button class="viewer-open" data-action="model-viewer">360° 查看文档模型 <span>↗</span></button></div>
     <article id="detail-content" class="detail-content"></article>
   </section>
-  <div class="powered">技术支持：<b>莱茵生命</b><i></i></div>
+  <div class="powered">作品集：<b>LSH</b><i></i></div>
   <footer class="system-footer"><span><i class="status-light"></i> 会话已授权${isWallpaper ? '<button type="button" class="three-toggle" data-action="toggle-three" aria-pressed="true" title="卸载三维模型，保留 2D 界面">3D 开启</button>' : ''}</span><span>乔伊斯·莫尔 <i>／</i> <span id="clock">00:00:00</span></span><button data-action="replay" title="重播启动流程">重新初始化 ↗</button></footer>
   <div id="pwa-update-notice" class="pwa-update-notice" role="status" hidden><span>新版本已就绪</span><button data-pwa-action="update">更新并重启 ↻</button></div>
   <div id="modal-root"></div><div id="toast" class="toast" role="status"></div>

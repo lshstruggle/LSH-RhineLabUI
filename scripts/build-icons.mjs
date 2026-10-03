@@ -1,4 +1,4 @@
-// Rasterize the existing shared vector mark; no alternate logo or generated art.
+// Rasterize the shared LSH vector mark; no alternate logo or generated art.
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -10,4 +10,4 @@ await mkdir('public/icons',{recursive:true});
 await writeFile('public/icons/app-icon.svg',svg);
 for(const [name,size] of [['apple-touch-icon',180],['icon-192',192],['icon-512',512],['icon-maskable-512',512]])
   await sharp(Buffer.from(svg)).resize(size,size).png().toFile(`public/icons/${name}.png`);
-console.log('Shared Rhine Lab mark exported to four home-screen icons.');
+console.log('Shared LSH mark exported to four home-screen icons.');

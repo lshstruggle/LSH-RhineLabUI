@@ -14,7 +14,7 @@ const arc = (r: number, start: number, sweep: number, x = 960, y = 540) => {
 export class BootSequence {
   private nodes: Map<string, HTMLElement> = new Map();
   private contour: SVGPathElement;
-  private letters: SVGTextElement;
+  private letters?: SVGTextElement;
   private plus: SVGPathElement;
   private minus: SVGPathElement;
   private brandLines: HTMLElement[];
@@ -64,9 +64,11 @@ export class BootSequence {
       mark.insertBefore(p, symbols);
     });
     symbols.remove();
-    this.letters = mark.querySelector("text[data-boot-letters]")!;
-    this.letters.setAttribute("text-anchor", "start");
-    this.letters.setAttribute("x", "20");
+    this.letters = mark.querySelector("text[data-boot-letters]") ?? undefined;
+    if (this.letters) {
+      this.letters.setAttribute("text-anchor", "start");
+      this.letters.setAttribute("x", "20");
+    }
     this.brandLines = Array.from(
       stage.querySelector(".brand")!.children,
     ) as HTMLElement[];
@@ -104,7 +106,7 @@ export class BootSequence {
       el.replaceChildren(ink);
     });
     this.poweredHTML = this.el(".powered").innerHTML;
-    new BootLettering(this.brandLines[0], ["brand"]).setText("莱茵生命");
+    new BootLettering(this.brandLines[0], ["brand"]).setText("LSH");
     // Bind after collecting the original ring paths. Phrase artwork also has
     // SVG paths, and must never be included in the scan's animated geometry.
     this.accessLettering = new BootLettering(this.el(".access-text"), ["access"]);
@@ -117,7 +119,7 @@ export class BootSequence {
       [".welcome-database", "database", "内部资料档案"],
     ] as const) new BootLettering(this.el(selector), [key]).setText(text);
     this.companyInk.forEach((el) =>
-      new BootLettering(el.querySelector("span")!, ["company"]).setText("莱茵生命"),
+      new BootLettering(el.querySelector("span")!, ["company"]).setText("LSH"),
     );
   }
   private el(selector: string) {
@@ -138,9 +140,7 @@ export class BootSequence {
     this.contour.style.strokeDasharray = `${s.logo.length} ${1 - s.logo.length}`;
     this.contour.style.strokeDashoffset = String(-s.logo.start);
     this.contour.setAttribute("stroke-width", String(s.logo.strokeWidth));
-    // Preserve the SVG text node once each revealed letter is in place. Replacing
-    // it every frame invalidates glyph rasterization under the moving HUD.
-    if (this.letters.textContent !== s.logoLetters)
+    if (this.letters && this.letters.textContent !== s.logoLetters)
       this.letters.textContent = s.logoLetters;
     this.plus.style.opacity = this.minus.style.opacity =
       s.logo.symbolScale > 0 ? "1" : "0";
